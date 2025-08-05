@@ -296,44 +296,64 @@ If you have any questions or need help with the tutorials:
 
 ## 📊 Roadmap
 
-### Phase 1: Core Indicators (Completed)
+### Phase 1: Core Indicators (Completed ✅)
 - [x] SMA tutorial with comprehensive examples
 - [x] Data download utilities
 - [x] Backtesting framework
 - [x] Repository structure
+- [x] Indicator calculation utilities
+- [x] Example usage script
 
-### Phase 2: Trend Indicators (In Progress)
-- [x] SMA (Simple Moving Average)
+### Phase 2: Trend Indicators (In Progress 🔄)
+- [x] SMA (Simple Moving Average) - `notebooks/trend/01_SMA_Complete_Tutorial.ipynb`
 - [ ] EMA (Exponential Moving Average)
-- [ ] MACD (Moving Average Convergence Divergence)
+- [x] MACD (Moving Average Convergence Divergence) - `notebooks/momentum/03_MACD_Complete_Tutorial.ipynb`
 - [ ] ADX (Average Directional Index)
 - [ ] Parabolic SAR
 - [ ] Ichimoku Cloud
 
-### Phase 3: Momentum Indicators
-- [ ] RSI (Relative Strength Index)
-- [ ] Stochastic Oscillator
+### Phase 3: Momentum Indicators (In Progress 🔄)
+- [x] RSI (Relative Strength Index) - `notebooks/momentum/01_RSI_Complete_Tutorial.ipynb`
+- [x] Stochastic Oscillator - `notebooks/momentum/02_Stochastic_Oscillator_Complete_Tutorial.ipynb`
 - [ ] Williams %R
 - [ ] CCI (Commodity Channel Index)
 - [ ] MFI (Money Flow Index)
+- [ ] Rate of Change (ROC)
+- [ ] Awesome Oscillator
 
-### Phase 4: Volatility Indicators
-- [ ] Bollinger Bands
+### Phase 4: Volatility Indicators (In Progress 🔄)
+- [x] Bollinger Bands - `notebooks/volatility/01_Bollinger_Bands_Complete_Tutorial.ipynb`
 - [ ] ATR (Average True Range)
 - [ ] Keltner Channels
 - [ ] Donchian Channels
+- [ ] Standard Deviation
 
-### Phase 5: Volume Indicators
-- [ ] OBV (On-Balance Volume)
-- [ ] Volume Profile
+### Phase 5: Volume Indicators (In Progress 🔄)
+- [x] OBV (On-Balance Volume) - `notebooks/volume/01_OBV_Complete_Tutorial.ipynb`
+- [x] Volume Profile - `notebooks/volume/02_Volume_Profile_Complete_Tutorial.ipynb`
 - [ ] VWAP (Volume Weighted Average Price)
-- [ ] Chaikin Money Flow
+- [ ] Accumulation/Distribution Line
+- [ ] Chaikin Money Flow (CMF)
+- [ ] Elder's Force Index
 
-### Phase 6: Advanced Topics
+### Phase 6: Support & Resistance Indicators (Planned 📋)
+- [ ] Fibonacci Retracements
+- [ ] Pivot Points (Standard, Woodie's, Camarilla)
+- [ ] Support/Resistance Levels
+- [ ] Price Action Patterns
+
+### Phase 7: Mean Reversion Indicators (Planned 📋)
+- [ ] Mean Reversion Strategy
+- [ ] Z-Score Analysis
+- [ ] Bollinger Bands %B
+- [ ] Statistical Arbitrage
+
+### Phase 8: Advanced Topics (Future 🚀)
 - [ ] Multi-timeframe Analysis
 - [ ] Machine Learning Integration
 - [ ] Portfolio Optimization
 - [ ] Live Trading Implementation
+- [ ] Risk Management Framework
 
 ---
 
