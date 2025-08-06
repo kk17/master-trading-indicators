@@ -1,0 +1,110 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "FreqTrade Dev Container",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// "image": "dev-base",
+	// "dockerComposeFile": "docker-compose.yml",
+	// "service": "app",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	"workspaceFolder": "${localWorkspaceFolder}",
+	"workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind",
+	"mounts": [
+		// "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+		"source=${localEnv:HOME}/.gemini,target=/home/ftuser/.gemini,type=bind",
+		"source=${localEnv:HOME}/.claude,target=/home/ftuser/.claude,type=bind",
+		"source=${localEnv:HOME}/.claude.json,target=/home/ftuser/.claude.json,type=bind",
+		"source=${localEnv:HOME}/.gitconfig,target=/home/ftuser/.gitconfig,type=bind",
+		"source=${localEnv:HOME}/.gitignore,target=/home/ftuser/.gitignore,type=bind",
+		"source=devcontainer-bashhistory,target=/tmp/.commandhistory,type=volume"
+	],
+	// Use this environment variable if you need to bind mount your local source code into a new container.
+	"remoteEnv": {
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+	},
+	// Container environment variables
+	"containerEnv": {
+		"TZ": "Asia/Singapore",
+		"ZSH_DOTENV_PROMPT": "false"
+	},
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		// https://github.com/devcontainers/features/tree/main/src/common-utils
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"configureZshAsDefaultShell": true
+		},
+		// https://github.com/devcontainers-extra/features/tree/main/src/zsh-plugins
+		"ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+			// temux kubectl k9s helm
+			"plugins": "git gitignore history aliases pip pre-commit dotenv docker docker-compose eza zsh-autosuggestions zsh-syntax-highlighting",
+			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting.git"
+		},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+			// "version": "${templateOption:dockerVersion}",
+			// "enableNonRootDocker": "${templateOption:enableNonRootDocker}",
+			// "moby": "${templateOption:moby}"
+		},
+		// "ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/mikaello/devcontainer-features/modern-shell-utils:2.0.0": {},
+		// "ghcr.io/devcontainers/features/python:1": {
+		// 	"version": "3.12"
+		// },
+		"ghcr.io/devcontainers-extra/features/pre-commit:2": {},
+		// https://github.com/devcontainers/features/tree/main/src/common-utils
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "bash .devcontainer/post-create.sh",
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "ftuser",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mhutchie.git-graph",
+				"eamodio.gitlens",
+				"timonwong.shellcheck",
+				"ms-python.python",
+				"Rubymaniac.vscode-paste-and-indent",
+				"anthropic.claude-code"
+			],
+			"settings": {
+				"editor.tabSize": 2,
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"terminal.integrated.copyOnSelection": true,
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+						"path": "bash",
+						"icon": "terminal-bash"
+					},
+					"zsh": {
+						"path": "zsh"
+					},
+					"fish": {
+						"path": "fish"
+					},
+					"tmux": {
+						"path": "tmux",
+						"icon": "terminal-tmux"
+					},
+					"pwsh": {
+						"path": "pwsh",
+						"icon": "terminal-powershell"
+					}
+				}
+			}
+		}
+	}
+	//, "postCreateCommand": ".devcontainer/scripts/post-create.sh"
+}
